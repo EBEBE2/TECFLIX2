@@ -1,0 +1,25 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": false
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "sqltools.connections": [
+    {
+      "name": "TECFLIX PostgreSQL",
+      "driver": "PostgreSQL",
+      "server": "localhost",
+      "port": 5432,
+      "database": "tecflix_db",
+      "username": "postgres"
+    }
+  ]
+}

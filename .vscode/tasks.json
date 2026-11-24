@@ -1,0 +1,72 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Iniciar TECFLIX Fullstack (Backend + Frontend)",
+      "type": "shell",
+      "command": "powershell.exe -ExecutionPolicy Bypass -File .\\start-all.ps1",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      }
+    },
+    {
+      "label": "🎬 Iniciar Backend API (Puerto 5000)",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "command": "npm run dev",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "💻 Iniciar Frontend Vite (Puerto 3000)",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "command": "npm run dev",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "🗄️ Inicializar Base de Datos PostgreSQL (schema + seed)",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "command": "powershell.exe -ExecutionPolicy Bypass -File .\\setup-database.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "📦 Instalar Todas las Dependencias (npm install)",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "command": "powershell.exe -ExecutionPolicy Bypass -File .\\install-all.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}
