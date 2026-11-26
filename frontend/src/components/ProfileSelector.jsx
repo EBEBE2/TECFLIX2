@@ -70,7 +70,7 @@ export default function ProfileSelector({ onSelect, onOpenSkinCustomizer }) {
                   </div>
                   {profile.is_kids && (
                     <span className="absolute bottom-1 right-1 bg-amber-500 text-black text-[10px] font-black px-2 py-0.5 rounded-full">
-                      KIDS
+                      INFANTIL
                     </span>
                   )}
                 </div>
@@ -147,7 +147,7 @@ export default function ProfileSelector({ onSelect, onOpenSkinCustomizer }) {
                   className="w-4 h-4 accent-purple-600 rounded cursor-pointer"
                 />
                 <label htmlFor="kidsCheck" className="text-xs text-purple-200 cursor-pointer">
-                  ¿Es un perfil para menores (Kids)?
+                  ¿Es un perfil para menores (infantil)?
                 </label>
               </div>
 

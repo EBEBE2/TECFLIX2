@@ -239,7 +239,7 @@ export default function VideoPlayerModal({ video, onClose, onOpenBilling }) {
                   className="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white font-bold text-sm shadow-neon-purple transition duration-200 flex items-center justify-center gap-2"
                 >
                   <CreditCard className="w-4 h-4" />
-                  <span>{activatingPlan ? 'Procesando Cobro...' : 'Activar Membresía VIP ($9.99)'}</span>
+                  <span>{activatingPlan ? 'Procesando Cobro...' : 'Activar Membresía VIP ($9.99 USD)'}</span>
                 </button>
 
                 <button

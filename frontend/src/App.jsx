@@ -32,7 +32,7 @@ function MainApp() {
     );
   }
 
-  // 2. Experiencia de Intro estilo Netflix con soporte de video local y botón Saltar Intro
+  // 2. Experiencia de Intro cinemático de TECFLIX con soporte de video local y botón Saltar Intro
   if (!introCompleted) {
     return <IntroScreen onComplete={finishIntro} />;
   }
@@ -122,3 +122,4 @@ export default function App() {
     </AuthProvider>
   );
 }
+

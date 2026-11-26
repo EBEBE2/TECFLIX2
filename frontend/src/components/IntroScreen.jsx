@@ -6,8 +6,9 @@ export default function IntroScreen({ onComplete }) {
   const [isMuted, setIsMuted] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [videoError, setVideoError] = useState(false);
 
-  // Sintetizador de audio para acorde cinemático estilo Netflix en tono púrpura
+  // Sintetizador de audio para acorde cinemático de TECFLIX en tono púrpura
   const playCinematicChord = () => {
     try {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -62,6 +63,25 @@ export default function IntroScreen({ onComplete }) {
     return () => clearTimeout(timer);
   }, []);
 
+  // Fallback con animación por temporizador si el video no carga o falla
+  useEffect(() => {
+    if (!videoError) return;
+    const interval = 50;
+    const totalTime = 3200;
+    const step = (interval / totalTime) * 100;
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          onComplete();
+          return 100;
+        }
+        return prev + step;
+      });
+    }, interval);
+    return () => clearInterval(timer);
+  }, [videoError, onComplete]);
+
   const handleTimeUpdate = () => {
     if (videoRef.current && videoRef.current.duration) {
       const p = (videoRef.current.currentTime / videoRef.current.duration) * 100;
@@ -90,15 +110,23 @@ export default function IntroScreen({ onComplete }) {
       className="fixed inset-0 z-50 bg-[#080312] flex flex-col items-center justify-center overflow-hidden cursor-pointer select-none"
     >
       {/* Video local de intro en background */}
-      <video
-        ref={videoRef}
-        src="/videos/intro.mp4"
-        playsInline
-        muted={isMuted}
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={onComplete}
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-      />
+      {!videoError && (
+        <video
+          ref={videoRef}
+          src="/videos/intro.mp4"
+          playsInline
+          muted={isMuted}
+          onTimeUpdate={handleTimeUpdate}
+          onEnded={onComplete}
+          onError={() => setVideoError(true)}
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+        />
+      )}
+
+      {/* Fondo animado CSS de respaldo si el video falla */}
+      {videoError && (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#120726] via-[#1a083a] to-[#080312] animate-pulse" />
+      )}
 
       {/* Degradado morado cinematográfico superior e inferior */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#080312] via-[#080312]/40 to-[#080312] pointer-events-none" />
@@ -157,3 +185,4 @@ export default function IntroScreen({ onComplete }) {
     </div>
   );
 }
+

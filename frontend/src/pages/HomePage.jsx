@@ -60,7 +60,7 @@ export default function HomePage({ onSelectVideo, searchTerm }) {
 
   return (
     <div className="min-h-screen bg-[#080312] text-white pb-20 overflow-x-hidden">
-      {/* 1. HERO BANNER PRINCIPAL (ESTILO NETFLIX) */}
+      {/* 1. HERO BANNER PRINCIPAL (cinemático de TECFLIX) */}
       {featuredVideo && !searchTerm && (
         <div className="relative w-full h-[75vh] md:h-[85vh] select-none">
           {/* Imagen de fondo con gradientes */}
@@ -374,3 +374,4 @@ function VideoCard({ video, onPlay, onInfo, isInList, onToggleList }) {
     </div>
   );
 }
+

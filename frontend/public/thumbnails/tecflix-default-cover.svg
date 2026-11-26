@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080312" />
+      <stop offset="50%" stop-color="#1b083a" />
+      <stop offset="100%" stop-color="#0d041c" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#080312" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#e9d5ff" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <circle cx="640" cy="360" r="450" fill="url(#glow)" />
+
+  <!-- Grid lines -->
+  <g stroke="#3b1875" stroke-width="1" opacity="0.25">
+    <line x1="0" y1="180" x2="1280" y2="180" />
+    <line x1="0" y1="360" x2="1280" y2="360" />
+    <line x1="0" y1="540" x2="1280" y2="540" />
+    <line x1="320" y1="0" x2="320" y2="720" />
+    <line x1="640" y1="0" x2="640" y2="720" />
+    <line x1="960" y1="0" x2="960" y2="720" />
+  </g>
+
+  <!-- Central TECFLIX brand badge -->
+  <g transform="translate(640, 360)">
+    <rect x="-180" y="-130" width="360" height="260" rx="24" fill="#120726" stroke="#8b5cf6" stroke-width="3" filter="url(#neon)" opacity="0.85" />
+    <text x="0" y="-15" text-anchor="middle" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="64" letter-spacing="8" fill="url(#titleGrad)" filter="url(#neon)">TECFLIX</text>
+    <text x="0" y="45" text-anchor="middle" font-family="'Outfit', 'Inter', sans-serif" font-weight="700" font-size="16" letter-spacing="6" fill="#a855f7">PRODUCCIÓN ORIGINAL</text>
+    <rect x="-70" y="70" width="140" height="28" rx="14" fill="#7e22ce" opacity="0.9" />
+    <text x="0" y="89" text-anchor="middle" font-family="'Outfit', 'Inter', sans-serif" font-weight="700" font-size="13" letter-spacing="2" fill="#ffffff">4K ULTRA HD</text>
+  </g>
+</svg>

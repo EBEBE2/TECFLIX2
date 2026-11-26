@@ -80,7 +80,7 @@ export default function Navbar({
               }`}
             >
               <Clapperboard className="w-3.5 h-3.5" />
-              <span>Creator Studio</span>
+              <span>Estudio de Creador</span>
             </button>
           )}
         </div>
